@@ -19,13 +19,29 @@ function imc(weight, height){
         result = weight/height; //completing the equation
 
         fst_paragraph.innerHTML = `Seu IMC é ${result.toFixed(2)}`
+    
+        let imc = result;
+
+        if(imc < 18.5){
+            snd_paragraph.innerHTML = `Seu Resultado está abaixo da média`
+        }
+        else if(imc >= 18.5 && imc < 25){
+            snd_paragraph.innerHTML = `Seu Resultado está dentro da média`
+        }
+        else if(imc >= 25 && imc < 30){
+            snd_paragraph.innerHTML = `Seu Resultado está acima da média (Sobrepeso)`
+        }
+        else if(imc >= 30 && imc < 35){
+            snd_paragraph.innerHTML = `Seu Resultado está acima da média (Obesidade Grau I)`
+        }
+        else if(imc >= 35 && imc < 40){
+            snd_paragraph.innerHTML = `Seu Resultado está acima da média (Obesidade Grau II)`
+        }
+        else{
+            snd_paragraph.innerHTML = `Seu Resultado está acima da média (Obesidade Grau III)`
+        }
+
     })
-
-    table()
-}
-
-function table(weight, height){
-
 }
 
 imc()
